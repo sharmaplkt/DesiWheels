@@ -104,6 +104,7 @@ public class MainActivity extends ActionBarActivity {
                 }
                 catch(Exception e){
                     Log.d("Exception Intent", e.toString());
+                    Log.e("comment" , "hello there");
                 }
 
             }
@@ -115,6 +116,7 @@ public class MainActivity extends ActionBarActivity {
     public static Context getContext() {
         return context;
     }
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -149,6 +151,7 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... arg0) {
         // TODO Auto-generated method stub
+
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(domain+arg0[6]);
 
