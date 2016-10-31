@@ -54,7 +54,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         context = getApplicationContext();
-
+        
+        //finding widgets
+        
         b1 = (Button)findViewById(R.id.button1);
         name = (EditText) findViewById (R.id.name);
         roll = (EditText) findViewById (R.id.roll);
@@ -81,12 +83,12 @@ public class MainActivity extends ActionBarActivity {
                 if(hire.isChecked()==true)
                 {
                     link = "12hire.php";
-                    Log.d("Radio", "hire");
+                    //Log.d("Radio", "hire");
                 }
                 if(rent.isChecked()==true)
                 {
                     link = "12rent.php";
-                    Log.d("Radio", "rent");
+                    //Log.d("Radio", "rent");
                 }
                 runner.execute(name.getText().toString(),roll.getText().toString(),phone.getText().toString(),room.getText().toString(),date.getText().toString(),time.getText().toString(),link);
             }
@@ -103,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(i);
                 }
                 catch(Exception e){
-                    Log.d("Exception Intent", e.toString());
+                    //Log.d("Exception Intent", e.toString());
                 }
 
             }
@@ -153,7 +155,7 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
         HttpPost post = new HttpPost(domain+arg0[6]);
 
         String result = "Your request is recieved and we'll contact you asap";
-        Log.d("async", "started");
+        //Log.d("async", "started");
 
         List<NameValuePair> pairs = new ArrayList<NameValuePair>(7);
 
@@ -164,12 +166,12 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
         pairs.add( new BasicNameValuePair("date", arg0[4]));
         pairs.add( new BasicNameValuePair("time", arg0[5]));
 
-        Log.d("upvote", pairs.toString());
+        //Log.d("upvote", pairs.toString());
 
         try {
             post.setEntity(new UrlEncodedFormEntity(pairs, "UTF-8"));
             client.execute(post);
-            Log.d("upvoted",post.toString());
+            //Log.d("upvoted",post.toString());
         } catch (Exception e3) {
             // TODO Auto-generated catch block
             e3.printStackTrace();
@@ -191,7 +193,7 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
 
         }
         catch(Exception e){
-            Log.e("Clearing data Exception",e.toString());
+            //Log.e("Clearing data Exception",e.toString());
         }
     }
 }
