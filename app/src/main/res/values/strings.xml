@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Desi Wheels</string>
+    <string name="terms">
+Terms and Conditions
+
+    The hiring charges of a bicycle is Rs 10 which will be valid for 12 hrs*
+    One should pay Rs 300 to hire a cycle which will be valid for 1 month*
+    If there is any damage or loss of a bicycle during the hiring period, the one who has hired the cycle has to bear the cost.
+    Bicycles can also be hired for short period of time on emergency basis.
+    People can rent out their bicycles , they will be paid according to the period of rent.
+
+    *the prices are subjected to change according to availability and demand.
+
+</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_terms_and_conditions">TermsAndConditions</string>
+
+    <string name="title_activity_splash">Splash</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
