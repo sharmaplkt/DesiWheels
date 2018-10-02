@@ -65,9 +65,7 @@ public class MainActivity extends ActionBarActivity {
         rent = (RadioButton) findViewById (R.id.rent);
         hire = (RadioButton) findViewById (R.id.hire);
 
-        Log.d("button", "found");
-        //b1.setOnClickListener(this);
-        //b1.setBackgroundColor(Color.);
+        //Log.d("button", "found"); Commenting some logs before release
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -99,8 +97,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Intent i=new Intent(MainActivity.this,TermsAndConditions.class);
-                    startActivity(i);
+                    Intent intent=new Intent(MainActivity.this,TermsAndConditions.class);
+                    startActivity(intent);
                 }
                 catch(Exception e){
                     Log.d("Exception Intent", e.toString());
@@ -118,8 +116,6 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-      //  getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -129,12 +125,10 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -148,14 +142,13 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
     Context context;
     @Override
     protected String doInBackground(String... arg0) {
-        // TODO Auto-generated method stub
         HttpClient client = new DefaultHttpClient();
-        HttpPost post = new HttpPost(domain+arg0[6]);
+        HttpPost post = new HttpPost(domain + arg0[6]);
 
-        String result = "Your request is recieved and we'll contact you asap";
+        String result = "Your request is recieved and we'll contact you ASAP";
         Log.d("async", "started");
 
-        List<NameValuePair> pairs = new ArrayList<NameValuePair>(7);
+        List<NameValuePair> pairs = new ArrayList<NameValuePair>();
 
         pairs.add( new BasicNameValuePair("name", arg0[0]));
         pairs.add( new BasicNameValuePair("roll", arg0[1]));
@@ -183,12 +176,8 @@ class AsyncTaskRunner extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String result) {
     Toast.makeText(MainActivity.getContext(), result, Toast.LENGTH_LONG).show();
-
-
-
         try{
             MainActivity.clear();
-
         }
         catch(Exception e){
             Log.e("Clearing data Exception",e.toString());
